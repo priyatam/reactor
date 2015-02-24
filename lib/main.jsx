@@ -1,14 +1,8 @@
-import React from "react";
+'use strict';
 
-const Hello = React.createClass({
-    componentDidMount() {
-	console.log("finally!")
-    },
-    render() {
-	return <div>Hello {this.props.message}</div>;
-    }
-})
+import React from 'react'
+import router from './router.jsx!'
 
-React.render(<Hello message="world"/>, document.body)
+router.init()
 
-export default {}
+//React.render(<Hello message="world"/>, document.body)
