@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import Resolver from 'react-resolver';
-import request from 'superagent';
+import React from 'react'
+import Resolver from 'react-resolver'
+import request from 'superagent'
 
-const WEATHER = 'http://api.openweathermap.org/data/2.5/find?q=Paris,fr&units=metric';
+const WEATHER = 'http://api.openweathermap.org/data/2.5/find?q=Paris,fr&units=metric'
 
 export default React.createClass({
   mixins: [Resolver.mixin],
@@ -24,6 +24,6 @@ export default React.createClass({
           <li>Actual: {weather.temp}</li>
         </ul>
       </div>
-    );
+    )
   }
-});
+})
