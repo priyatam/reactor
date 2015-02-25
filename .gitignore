@@ -1,6 +1,4 @@
-config.js
-build.js*
-jspm_packages
+.tmp
 dist/*js.map
 
 # Logs

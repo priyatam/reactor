@@ -1,0 +1,66 @@
+{
+  "name": "es6-react-boilerplate",
+  "version": "0.0.2",
+  "description": "An ES6 isomorphic ReactJS boilerplate",
+  "main": "server/server.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iam4x/es6-react-boilerplate.git"
+  },
+  "homepage": "https://github.com/iam4x/es6-react-boilerplate",
+  "bugs": "https://github.com/iam4x/es6-react-boilerplate/issues",
+  "author": "iam4x",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^4.1.1",
+    "babel-core": "^4.1.1",
+    "babel-loader": "^4.0.0",
+    "express": "^4.11.1",
+    "express-handlebars": "^1.1.0",
+    "normalize.css": "^3.0.2",
+    "react": "^0.12.2",
+    "react-resolver": "^0.1.1",
+    "react-router": "^0.12.4",
+    "reflux": "^0.2.4",
+    "superagent": "^0.21.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.0.1",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-concat-css": "^2.0.0",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-import-css": "^0.1.2",
+    "gulp-minify-css": "^0.4.3",
+    "gulp-less": "^3.0.1",
+    "gulp-size": "^1.2.0",
+    "gulp-supervisor": "^0.1.2",
+    "gulp-util": "^3.0.2",
+    "gulp-webpack": "^1.2.0",
+    "imagemin-pngquant": "^4.0.0",
+    "proxy-middleware": "^0.11.0",
+    "react-hot-loader": "^1.1.4",
+    "webpack": "^1.5.3",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "tags": [
+    "react",
+    "react-router",
+    "isomorphic",
+    "express",
+    "webpack",
+    "jsx",
+    "es6"
+  ],
+  "keywords": [
+    "react",
+    "isomorphic",
+    "spa",
+    "ssr",
+    "express",
+    "webpack",
+    "jsx",
+    "es6"
+  ]
+}
