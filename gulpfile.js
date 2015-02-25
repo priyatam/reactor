@@ -141,7 +141,12 @@ gulp.task('dev', [
 // | BUILD TASKS |
 // +-------------+
 
-gulp.task('webpack:build', function (callback) {
+gulp.task('copy-index', function() {
+    gulp.src('./app/index.html')
+        .pipe(gulp.dest('./dist'))
+});
+	  
+gulp.task('webpack:build', ['copy-index'], function (callback) {
   var config = Object.create(webpackConfig);
   config.plugins = [
     new webpack.DefinePlugin({
@@ -169,5 +174,5 @@ gulp.task('build:styles', ['styles'], function () {
     .pipe(minifyCSS())
     .pipe(gulp.dest(__dirname + '/dist/css/'));
 });
-
+	  
 gulp.task('build', ['clean', 'build:styles', 'images', 'webpack:build']);
