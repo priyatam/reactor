@@ -11,7 +11,6 @@ export default React.createClass({
           <ul>
             <li><Link to='app'>Home</Link></li>
 	    <li><Link to='todo'>Todo</Link></li>
-            <li><Link to='guides'>Guides</Link></li>
           </ul>
         </header>
 	
