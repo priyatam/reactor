@@ -1,16 +1,15 @@
 {
-  "name": "es6-react-boilerplate",
-  "version": "0.0.2",
-  "description": "An ES6 isomorphic ReactJS boilerplate",
-  "main": "server/server.js",
+  "name": "reactor",
+  "version": "0.1.0",
+  "description": "A live coding environment for React & ES6",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/iam4x/es6-react-boilerplate.git"
+    "url": "https://github.com/priyatam/reactor.git"
   },
-  "homepage": "https://github.com/iam4x/es6-react-boilerplate",
-  "bugs": "https://github.com/iam4x/es6-react-boilerplate/issues",
-  "author": "iam4x",
+  "homepage": "https://github.com/priyatam/reactor.git",
+  "bugs": "https://github.com/priyatam/reactor/issues",
+  "author": "priyatam",
   "license": "MIT",
   "dependencies": {
     "babel": "^4.1.1",
@@ -47,18 +46,13 @@
   "tags": [
     "react",
     "react-router",
-    "isomorphic",
-    "express",
     "webpack",
     "jsx",
     "es6"
   ],
   "keywords": [
     "react",
-    "isomorphic",
     "spa",
-    "ssr",
-    "express",
     "webpack",
     "jsx",
     "es6"
