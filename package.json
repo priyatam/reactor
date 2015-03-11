@@ -1,0 +1,93 @@
+{
+  "name": "react-seed",
+  "version": "0.0.6",
+  "repository": "https://github.com/badsyntax/react-seed",
+  "config": {
+    "build_dir": "./build",
+    "dev_port": 8000
+  },
+  "scripts": {
+    "env": "env",
+    "prerelease": "npm test",
+    "prestart": "npm install",
+    "prewebpack": "npm run clean",
+    "clean": "rm -rf $npm_package_config_build_dir && mkdir $npm_package_config_build_dir",
+    "start": "NODE_ENV=development npm run webpack && npm run start-dev-server",
+    "webpack": "webpack --colors --progress --config ./webpack.config.js",
+    "start-dev-server": "webpack-dev-server --colors --port $npm_package_config_dev_port --content-base $npm_package_config_build_dir --config webpack.config.js --output-pathinfo --inline",
+    "build": "NODE_ENV=production npm run webpack",
+    "lint": "eslint ./app",
+    "test": "jest"
+  },
+  "dependencies": {
+    "classnames": "^1.1.4",
+    "flux": "^2.0.1",
+    "normalize.css": "^3.0.2",
+    "react": "^0.13.0"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.1.7",
+    "babel-core": "^4.7.8",
+    "babel-eslint": "^2.0.0",
+    "babel-jest": "^4.0.0",
+    "babel-loader": "^4.1.0",
+    "babel-runtime": "^4.7.8",
+    "css-loader": "^0.9.1",
+    "eslint": "^0.16.2",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "file-loader": "^0.8.1",
+    "html-loader": "^0.2.3",
+    "jest-cli": "^0.4.0",
+    "lodash": "^3.5.0",
+    "postcss-loader": "^0.3.0",
+    "sass-loader": "^0.4.2",
+    "style-loader": "^0.8.3",
+    "template-html-loader": "0.0.3",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "jest": {
+    "scriptPreprocessor": "./jest-preprocessor.js",
+    "testPathDirs": [
+      "./app"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "jest": true,
+      "describe": true,
+      "it": true,
+      "expect": true
+    },
+    "rules": {
+      "strict": true,
+      "indent": [
+        2,
+        2
+      ],
+      "quotes": [
+        2,
+        "single"
+      ]
+    }
+  }
+}

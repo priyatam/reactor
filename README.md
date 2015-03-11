@@ -1,46 +1,159 @@
 # Reactor
 
-A live coding environment for ES6 (Babeljs) and [React](https://facebook.github.io/react/), optimized with Webpack and Immutablejs.
+A boilerplate for building React apps with ES6 and Webpack.
 
-## Libraries
+## What you get
 
-- [react](https://facebook.github.io/react/)
-- [react-router](https://github.com/rackt/react-router)
-- [react-resolver](https://github.com/ericclemmons/react-resolver)
-- [react-hot-loader](https://github.com/gaearon/react-hot-loader)
-- [webpack](http://webpack.github.io/)
-- [gulpjs](http://gulpjs.com/)
-- [babeljs](https://babeljs.io/)
+* React 0.13
+* Compilation of ES6 & JSX to ES5
+* Jest testing framework
+* webpack bundling with html, css & sass loaders
+* Basic flux architecture with app actions, events and stores
 
-## Setup
+## Getting started
 
-Use [io.js](https://iojs.org/) with [nvm](https://github.com/creationix/nvm) to take advantages of `ES6` without `--harmony` flag on `NodeJS`:
+Clone the project and remove the git repository:
 
-	nvm install iojs
-	nvm use iojs
+```bash
+git clone --depth=1 https://github.com/priyatam/reactor.git my-project
+cd my-project
+rm -rf .git
+```
 
-Clone the repo and install deps:
+## npm scripts
 
-	git clone https://github.com/priyatam/reactor.git`
-	cd reactor && npm install
-	npm install -g gulp
+* `npm start` - Build and start the app in dev mode at http://localhost:8000
+* `npm test` - Run the tests
+* `npm run build` - Run a production build
 
-## Development
+## Examples
 
-For local development:
+Writing components:
 
-	gulp dev
+```js
+// Filename: Menu.jsx
 
-Open your browser to `http://localhost:8080`.
+'use strict';
 
-Try to disable JavaScript in your browser, you will still be able to navigate between pages of the application. Enjoy the power of isomorphic applications!
+import './_Menu.scss';
 
-For building a release:
+import React from 'react';
+import MenuItem from '../MenuItem/MenuItem';
 
-	gulp build
+var { PropTypes } = React;
 
-This will:
+class Menu extends React.Component {
 
-- Concat & minify styles to `/dist/css/styles.css`
-- Concat & minify scripts to `/dist/js/app.js`
-- Optimize & copy images to `/dist/img/`
+  constructor(...args) {
+    super(...args);
+    // Set initial state
+    this.state = {
+      foo: false
+    };
+  }
+
+  getMenuItem(item) {
+    return (
+      <MenuItem item={item} key={'menu-item-' + item.id} />
+    );
+  }
+
+  render() {
+    return (
+      <ul className={'menu'}>
+        {this.props.items.map(this.getMenuItem, this)}
+      </ul>
+    );
+  }
+}
+
+Menu.propTypes = {
+  items: PropTypes.array.isRequired
+};
+
+export default Menu;
+```
+
+Writing tests:
+
+```js
+// Filename: __tests__/Menu-test.js
+
+'use strict';
+
+import React from 'react/addons';
+
+jest.dontMock('../Menu.jsx');
+jest.dontMock('../../MenuItem/MenuItem.jsx');
+
+import Menu from '../Menu.jsx';
+
+var { TestUtils } = React.addons;
+
+describe('Menu', () => {
+
+  var menuItems = [
+    { id: 1, label: 'Option 1' },
+    { id: 2, label: 'Option 2' }
+  ];
+
+  var menu = TestUtils.renderIntoDocument(
+    <Menu items={menuItems} />
+  );
+  var menuElem = React.findDOMNode(menu);
+
+  it('Renders the menu items', () => {
+    expect(menuElem.querySelectorAll('li').length).toEqual(2);
+  });
+});
+```
+
+## Sass, CSS & webpack
+
+`import` Sass and CSS files from within your JavaScript component files:
+
+```js
+// Filename: app.jsx
+import 'normalize.css/normalize.css';
+import './scss/app.scss';
+```
+
+* Sass include paths can be adjusted in the `webpack.config.js` file.
+* All CSS (compiled or otherwise) is run through Autoprefixer.
+* CSS files are combined in the order in which they are imported in JavaScript, thus
+you should always import your CSS/Sass before importing any other JavaScript files.
+* Use an approach like [BEM](http://cssguidelin.es/#bem-like-naming) to avoid specificity
+issues that might exist due to unpredicatable order of CSS rules.
+
+## HTML files
+
+All required `.html` files are compiled with lodash.template and synced into the `./build` directory:
+
+```js
+// Filename: app.jsx
+import './index.html';
+```
+
+* You can adjust the lodash template data in the `webpack.config.js` file.
+
+## Releasing
+
+Updating version:
+
+* `npm version patch` - Bump version
+* `git push && git push --tags` - Push to remote
+
+Publishing package:
+
+* `npm login` - Login to npm
+* `npm publish` - Publish package
+
+## Credits
+
+This project was initially forked from https://github.com/badsyntax/react-seed
+
+## License
+
+Copyright (c) 2015 Priyatam Mudivarti
+
+MIT (http://opensource.org/licenses/MIT)
