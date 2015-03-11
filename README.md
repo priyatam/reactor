@@ -1,6 +1,6 @@
 # Reactor
 
-A live coding environment for ES6 and [React](https://facebook.github.io/react/). Optimized with Webpack, Babeljs, and Immutablejs
+A live coding environment for ES6 (Babeljs) and [React](https://facebook.github.io/react/), optimized with Webpack and Immutablejs.
 
 ## Libraries
 
@@ -14,15 +14,12 @@ A live coding environment for ES6 and [React](https://facebook.github.io/react/)
 
 ## Setup
 
-Use [io.js](https://iojs.org/) to take advantages of `ES6` without `--harmony` flag on `NodeJS`.
-
-It's super easy to do with [nvm](https://github.com/creationix/nvm):
+Use [io.js](https://iojs.org/) with [nvm](https://github.com/creationix/nvm) to take advantages of `ES6` without `--harmony` flag on `NodeJS`:
 
 	nvm install iojs
 	nvm use iojs
-	nvm alias default iojs (to make `node` default to `iojs`)
 
-Clone the repo and install dependancies:
+Clone the repo and install deps:
 
 	git clone https://github.com/priyatam/reactor.git`
 	cd reactor && npm install
@@ -34,12 +31,13 @@ For local development:
 
 	gulp dev
 
-Open your browser to `http://localhost:8080` and you will see the magic happens! Try to disable JavaScript in your browser,
-you will still be able to navigate between pages of the application. Enjoy the power of isomorphic applications!
+Open your browser to `http://localhost:8080`.
 
-For bundling a release:
+Try to disable JavaScript in your browser, you will still be able to navigate between pages of the application. Enjoy the power of isomorphic applications!
 
-	gulp release
+For building a release:
+
+	gulp build
 
 This will:
 
