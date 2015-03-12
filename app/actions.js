@@ -1,11 +1,11 @@
 'use strict';
 
-import AppDispatcher from '../dispatcher/AppDispatcher';
+import AppDispatcher from './dispatcher';
 
 import {
   ITEM_SELECTED,
   ITEM_DESELECTED
-} from '../constants/AppConstants';
+} from './constants';
 
 export default {
 

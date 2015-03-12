@@ -15,7 +15,7 @@ function getAppState() {
   };
 }
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   constructor(...args) {
     super(...args);
@@ -56,3 +56,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App

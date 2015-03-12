@@ -1,7 +1,7 @@
 'use strict';
 
 import BaseStore from './BaseStore';
-import { ITEMS_UPDATED } from '../constants/AppConstants';
+import { ITEMS_UPDATED } from '../constants';
 
 class ItemsStore extends BaseStore {
 

@@ -1,13 +1,8 @@
 'use strict';
 
 import BaseStore from './BaseStore';
-import AppDispatcher from '../dispatcher/AppDispatcher';
-
-import {
-  SELECTED_UPDATED,
-  ITEM_SELECTED,
-  ITEM_DESELECTED
-} from '../constants/AppConstants';
+import AppDispatcher from '../dispatcher';
+import { SELECTED_UPDATED, ITEM_SELECTED, ITEM_DESELECTED} from '../constants';
 
 class SelectedStore extends BaseStore {
 
