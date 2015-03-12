@@ -2,7 +2,7 @@
 
 import BaseStore from './BaseStore';
 import AppDispatcher from '../dispatcher';
-import { SELECTED_UPDATED, ITEM_SELECTED, ITEM_DESELECTED} from '../constants';
+import {SELECTED_UPDATED, ITEM_SELECTED, ITEM_DESELECTED} from '../constants';
 
 class SelectedStore extends BaseStore {
 
@@ -15,18 +15,18 @@ class SelectedStore extends BaseStore {
   }
 }
 
-var store = new SelectedStore();
+var store = new SelectedStore()
 
 AppDispatcher.register((action) => {
   switch(action.actionType) {
-    case ITEM_SELECTED:
-      store.set(action.item);
-      break;
-    case ITEM_DESELECTED:
-      store.remove(action.item);
-      break;
-    default:
+  case ITEM_SELECTED:
+    store.set(action.item);
+    break;
+  case ITEM_DESELECTED:
+    store.remove(action.item);
+    break;
+  default:
   }
-});
+})
 
 export default store;

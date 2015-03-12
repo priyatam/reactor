@@ -1,7 +1,7 @@
 'use strict';
 
 import BaseStore from './BaseStore';
-import { ITEMS_UPDATED } from '../constants';
+import {ITEMS_UPDATED, ITEM_SELECTED, ITEM_DESELECTED} from '../constants';
 
 class ItemsStore extends BaseStore {
 
@@ -14,6 +14,4 @@ class ItemsStore extends BaseStore {
   }
 }
 
-var store = new ItemsStore();
-
-export default store;
+export default new ItemsStore();

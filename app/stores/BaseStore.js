@@ -2,7 +2,7 @@
 
 import EventEmitter from 'events';
 
-export default class BaseStore extends EventEmitter {
+class BaseStore extends EventEmitter {
 
   constructor(...args) {
     super(...args);
@@ -32,3 +32,5 @@ export default class BaseStore extends EventEmitter {
 
   emitChange() {}
 }
+
+export default BaseStore;
