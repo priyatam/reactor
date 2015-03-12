@@ -1,11 +1,11 @@
 'use strict';
 
-import './_MenuItem.scss';
+import './_MenuItem.scss'
 
-import React from 'react';
-import classnames from 'classnames';
+import React from 'react'
+import classnames from 'classnames'
 
-var { PropTypes } = React;
+var { PropTypes } = React
 
 class MenuItem extends React.Component {
 
@@ -13,21 +13,21 @@ class MenuItem extends React.Component {
     super(...args);
     this.state = {
       isSelected: false
-    };
+    }
   }
 
   handleClick(e) {
-    console.log('You clicked on: %s', this.props.item.label);
-    this.toggleSelected();
+    console.log('You clicked on: %s', this.props.item.label)
+    this.toggleSelected()
     this.props[
       this.isSelected() ? 'onDeselect' : 'onSelect'
-    ](this.props.item);
+    ](this.props.item)
   }
 
   toggleSelected() {
     this.setState({
       isSelected: !this.state.isSelected
-    });
+    })
   }
 
   isSelected() {
@@ -38,7 +38,7 @@ class MenuItem extends React.Component {
     return classnames({
       'menu-item': true,
       '-selected': this.isSelected()
-    });
+    })
   }
 
   render() {
@@ -46,7 +46,7 @@ class MenuItem extends React.Component {
       <li className={this.getClassName()} onClick={this.handleClick.bind(this)}>
         {this.props.item.label}
       </li>
-    );
+    )
   }
 }
 
@@ -54,6 +54,6 @@ MenuItem.propTypes =  {
   item: PropTypes.object.isRequired,
   onSelect: PropTypes.func.isRequired,
   onDeselect: PropTypes.func.isRequired
-};
+}
 
-export default MenuItem;
+export default MenuItem

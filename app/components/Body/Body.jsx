@@ -1,22 +1,22 @@
 'use strict';
 
-import './_Body.scss';
+import './_Body.scss'
 
-import React from 'react';
-import AppActions from '../../actions';
-import Menu from '../Menu/Menu';
-import SelectedList from '../SelectedList/SelectedList';
+import React from 'react'
+import Menu from '../Menu/Menu'
+import AppActions from '../../actions'
+import SelectedList from '../SelectedList/SelectedList'
 
-var { PropTypes } = React;
+var { PropTypes } = React
 
 class Body extends React.Component {
 
   handleMenuSelect(item) {
-    AppActions.selectItem(item);
+    AppActions.selectItem(item)
   }
 
   handleMenuDeselect(item) {
-    AppActions.deSelectItem(item);
+    AppActions.deSelectItem(item)
   }
 
   getMenu() {
@@ -25,14 +25,14 @@ class Body extends React.Component {
         items={this.props.items}
         onSelect={this.handleMenuSelect}
         onDeselect={this.handleMenuDeselect} />
-    );
+    )
   }
 
   getSelectedList() {
     return (
       <SelectedList
         items={this.props.selectedItems} />
-    );
+    )
   }
 
   render() {
@@ -44,13 +44,13 @@ class Body extends React.Component {
         <p>Your selections:</p>
         {this.getSelectedList()}
       </div>
-    );
+    )
   }
 }
 
 Body.propTypes =  {
   items: PropTypes.array.isRequired,
   selectedItems: PropTypes.array.isRequired
-};
+}
 
-export default Body;
+export default Body

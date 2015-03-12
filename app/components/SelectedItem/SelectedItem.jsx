@@ -1,8 +1,8 @@
 'use strict';
 
-import React from 'react';
+import React from 'react'
 
-var { PropTypes } = React;
+var { PropTypes } = React
 
 class SelectedItem extends React.Component {
   render() {
@@ -10,12 +10,12 @@ class SelectedItem extends React.Component {
       <li className={'selected-item'}>
         {this.props.item.label}
       </li>
-    );
+    )
   }
 }
 
 SelectedItem.propTypes =  {
   item: PropTypes.object.isRequired
-};
+}
 
-export default SelectedItem;
+export default SelectedItem

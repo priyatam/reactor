@@ -1,7 +1,7 @@
 'use strict';
 
-import './_Footer.scss';
-import React from 'react';
+import './_Footer.scss'
+import React from 'react'
 
 export default class Footer extends React.Component {
   render() {
@@ -9,6 +9,6 @@ export default class Footer extends React.Component {
       <footer className={'footer'}>
         &copy; 2015
       </footer>
-    );
+    )
   }
 }

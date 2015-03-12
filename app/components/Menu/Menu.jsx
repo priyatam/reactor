@@ -1,11 +1,11 @@
 'use strict';
 
-import './_Menu.scss';
+import './_Menu.scss'
 
-import React from 'react';
-import MenuItem from '../MenuItem/MenuItem';
+import React from 'react'
+import MenuItem from '../MenuItem/MenuItem'
 
-var { PropTypes } = React;
+var { PropTypes } = React
 
 class Menu extends React.Component {
 
@@ -16,7 +16,7 @@ class Menu extends React.Component {
         onSelect={this.props.onSelect}
         onDeselect={this.props.onDeselect}
         key={'menu-item-' + item.id} />
-    );
+    )
   }
 
   render() {
@@ -24,7 +24,7 @@ class Menu extends React.Component {
       <ul className={'menu'}>
         {this.props.items.map(this.getMenuItem, this)}
       </ul>
-    );
+    )
   }
 }
 
@@ -32,6 +32,6 @@ Menu.propTypes =  {
   items: PropTypes.array.isRequired,
   onSelect: PropTypes.func.isRequired,
   onDeselect: PropTypes.func.isRequired
-};
+}
 
-export default Menu;
+export default Menu
