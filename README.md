@@ -1,30 +1,78 @@
 # Reactor
 
-A boilerplate for building React apps with ES6 and Webpack.
+Build React apps with ES6, Rework, and Webpack. No servers, just the UI.
 
-## What you get
+## Why another boilerplate?
 
-* React 0.13
-* Compilation of ES6 & JSX to ES5
-* Jest testing framework
-* webpack bundling with html, css & sass loaders
-* Basic flux architecture with app actions, events and stores
+Focus on the UI, with an emphasis on forward-thinking ES6 and CSS3 libraries.
+
+## Libraries
+
+- React 0.13 with [ES6 Classes](http://facebook.github.io/react/blog/2015/03/10/react-v0.13.html)
+- [Babel](https://babeljs.io), compile ES6 & JSX to ES5
+- [Alt](https://github.com/goatslacker/alt), a minimalist Flux in ES6
+- [Rework](https://github.com/reworkcss/rework)
+- [ImmutableJs](https://github.com/facebook/immutable-js)
+- [Jest](https://facebook.github.io/jest/), painless unit testing
+- [Webpack](http://webpack.github.io) with [React-Hot-Loader](https://github.com/gaearon/react-hot-loader/tree/master/docs#starter-kits)
 
 ## Getting started
 
 Clone the project and remove the git repository:
 
 ```bash
-git clone --depth=1 https://github.com/priyatam/reactor.git my-project
+git clone --depth=1 https://github.com/priyatam/reactor.git my-reactor
 cd my-project
 rm -rf .git
 ```
 
-## npm scripts
+## Development
 
 * `npm start` - Build and start the app in dev mode at http://localhost:8000
 * `npm test` - Run the tests
 * `npm run build` - Run a production build
+
+## Desig
+
+Note: This feature will be removed after Rework is included.
+
+`import` Sass and CSS files from within your JavaScript component files:
+
+```js
+// Filename: app.jsx
+import 'normalize.css/normalize.css';
+import './scss/app.scss';
+```
+
+* Sass include paths can be adjusted in the `webpack.config.js` file.
+* All CSS (compiled or otherwise) is run through Autoprefixer.
+* CSS files are combined in the order in which they are imported in JavaScript, thus
+you should always import your CSS/Sass before importing any other JavaScript files.
+* Use an approach like [BEM](http://cssguidelin.es/#bem-like-naming) to avoid specificity
+issues that might exist due to unpredicatable order of CSS rules.
+
+## Templates
+
+All required `.html` files are compiled with lodash.template and synced into the `./build` directory:
+
+```js
+// Filename: app.jsx
+import './index.html';
+```
+
+* You can adjust the lodash template data in the `webpack.config.js` file.
+
+## Release
+
+Updating version:
+
+* `npm version patch` - Bump version
+* `git push && git push --tags` - Push to remote
+
+Publishing package:
+
+* `npm login` - Login to npm
+* `npm publish` - Publish package
 
 ## Examples
 
@@ -108,52 +156,12 @@ describe('Menu', () => {
 });
 ```
 
-## Sass, CSS & webpack
-
-`import` Sass and CSS files from within your JavaScript component files:
-
-```js
-// Filename: app.jsx
-import 'normalize.css/normalize.css';
-import './scss/app.scss';
-```
-
-* Sass include paths can be adjusted in the `webpack.config.js` file.
-* All CSS (compiled or otherwise) is run through Autoprefixer.
-* CSS files are combined in the order in which they are imported in JavaScript, thus
-you should always import your CSS/Sass before importing any other JavaScript files.
-* Use an approach like [BEM](http://cssguidelin.es/#bem-like-naming) to avoid specificity
-issues that might exist due to unpredicatable order of CSS rules.
-
-## HTML files
-
-All required `.html` files are compiled with lodash.template and synced into the `./build` directory:
-
-```js
-// Filename: app.jsx
-import './index.html';
-```
-
-* You can adjust the lodash template data in the `webpack.config.js` file.
-
-## Releasing
-
-Updating version:
-
-* `npm version patch` - Bump version
-* `git push && git push --tags` - Push to remote
-
-Publishing package:
-
-* `npm login` - Login to npm
-* `npm publish` - Publish package
-
 ## Credits
 
-This project was initially forked from https://github.com/badsyntax/react-seed
+This project was initially forked from https://github.com/badsyntax/react-seed.
 
 ## License
 
-Copyright (c) 2015 Priyatam Mudivarti
+Copyright (c) 2015 Priyatam Mudivarti.
 
 MIT (http://opensource.org/licenses/MIT)
