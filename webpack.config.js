@@ -69,7 +69,7 @@ var loaders = [
       'sass-loader?' + [
         'sourceMap',
         'outputStyle=expanded',
-        'includePaths[]=' + path.resolve(__dirname, './app/scss'),
+        'includePaths[]=' + path.resolve(__dirname, './app/styles'),
         'includePaths[]=' + path.resolve(__dirname, './node_modules')
       ].join('&')
     ].join('!'))

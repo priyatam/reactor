@@ -1,9 +1,9 @@
 'use strict'
 
 import './index.html'
-import 'babel-core/polyfill'
+import './styles/app.scss'
 import 'normalize.css/normalize.css'
-import './scss/app.scss'
+import 'babel-core/polyfill'
 import React from 'react'
 import App from './components/App/App'
 
