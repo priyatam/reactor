@@ -1,10 +1,9 @@
 {
-  "name": "react-seed",
-  "version": "0.0.6",
-  "repository": "https://github.com/badsyntax/react-seed",
+  "name": "reactor",
+  "version": "0.1.1",
+  "repository": "https://github.com/priyatam/reactor",
   "config": {
-    "build_dir": "./build",
-    "dist_dir": "./dist",
+    "build_dir": "./dist",
     "dev_port": 8000
   },
   "scripts": {
