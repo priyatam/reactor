@@ -4,17 +4,17 @@ Build React apps with ES6, Rework, and Webpack. No servers, just the UI.
 
 ## Why another boilerplate?
 
-Focus on the UI, with an emphasis on forward-thinking ES6 and CSS3 libraries.
+Focus on the UI, with an emphasis on forward-thinking, future-proof ES6 and CSS3.
 
-## Libraries
+## Goals
 
-- [React ES6 Classes](http://facebook.github.io/react/blog/2015/03/10/react-v0.13.html)
-- [Alt](https://github.com/goatslacker/alt), a minimalist Flux in ES6
-- [Rework](https://github.com/reworkcss/rework)
-- [Babel](https://babeljs.io)
+- [ES6 React](http://facebook.github.io/react/blog/2015/03/10/react-v0.13.html)
+- [ES6 Flux](https://github.com/goatslacker/alt)
+- [Rework CSS3](https://github.com/reworkcss/rework)
+- [BabelJs](https://babeljs.io)
 - [ImmutableJs](https://github.com/facebook/immutable-js)
 - [Jest](https://facebook.github.io/jest/)
-- [Webpack](http://webpack.github.io) with [React-hot-loader](https://github.com/gaearon/react-hot-loader/tree/master/docs#starter-kits)
+- [Webpack](http://webpack.github.io) with [react-hot-loader](https://github.com/gaearon/react-hot-loader/tree/master/docs#starter-kits)
 
 ## Getting started
 
@@ -22,7 +22,7 @@ Clone the project and remove the git repository:
 
 ```bash
 git clone --depth=1 https://github.com/priyatam/reactor.git my-reactor
-cd my-project
+cd my-projectg
 rm -rf .git
 ```
 
@@ -35,7 +35,7 @@ rm -rf .git
 
 ## Design
 
-Note: This feature will be removed after Rework is included.
+Note: Sass will be removed after Rework is incorporated.
 
 `import` Sass and CSS files from within your JavaScript component files:
 
@@ -45,23 +45,21 @@ import 'normalize.css/normalize.css';
 import './scss/app.scss';
 ```
 
-* Sass include paths can be adjusted in the `webpack.config.js` file.
-* All CSS (compiled or otherwise) is run through Autoprefixer.
-* CSS files are combined in the order in which they are imported in JavaScript, thus
-you should always import your CSS/Sass before importing any other JavaScript files.
-* Use an approach like [BEM](http://cssguidelin.es/#bem-like-naming) to avoid specificity
-issues that might exist due to unpredicatable order of CSS rules.
+All CSS (compiled or otherwise) is run through Autoprefixer. CSS files are combined in the
+order in which they are imported in JavaScript, thus you should always import your CSS/Sass
+before importing any other JavaScript files. Use an approach like [BEM](http://cssguidelin.es/#bem-like-naming) to avoid specificity issues that might exist due to unpredicatable order of
+CSS rules.
 
-All required `.html` files are compiled with lodash.template and synced into the `./build` directory:
+All required `.html` files are compiled with lodash.template and synced into the `./build`:
 
 ```js
 // Filename: app.jsx
 import './index.html';
 ```
 
-* You can adjust the lodash template data in the `webpack.config.js` file.
+Sass include paths & lodash template data can be configured in the `webpack.config.js`.
 
-## Examples
+## Workflow
 
 Writing components:
 
@@ -145,10 +143,14 @@ describe('Menu', () => {
 
 ## Credits
 
-This project was initially forked from https://github.com/badsyntax/react-seed.
+This project was forked and copied from several boilerplates:
+
+- [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate)
+- [react-seed](https://github.com/badsyntax/react-seed)
+- [isomorphic flux](https://github.com/iam4x/isomorphic-flux-boilerplate/tree/master)
 
 ## License
 
 Copyright (c) 2015 Priyatam Mudivarti.
 
-MIT (http://opensource.org/licenses/MIT)
+[MIT License](http://opensource.org/licenses/MIT).
