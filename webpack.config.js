@@ -39,8 +39,8 @@ if (DEBUG) {
 var loaders = [
   {
     test: /\.jsx?$/,
-    exclude: /node_modules/,
-    loader: 'babel-loader?optional&optional=runtime'
+    loaders: ['react-hot', 'babel-loader?optional&optional=runtime'],
+    exclude: /node_modules/
   },
   {
     test: /\.css$/,
@@ -80,7 +80,8 @@ var entry = {
   app: ['./app.jsx']
 };
 if (DEBUG) {
-  entry.app.push('webpack/hot/dev-server');
+  entry.app.push('webpack-dev-server/client?http://localhost:8000');
+  entry.app.push('webpack/hot/only-dev-server');
 }
 
 var config = {
@@ -104,7 +105,7 @@ var config = {
   ],
   plugins: plugins,
   resolve: {
-    extensions: ['', '.js', '.json', '.jsx']
+    extensions: ['', '.js', '.jsx']
   }
 };
 

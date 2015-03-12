@@ -4,6 +4,7 @@
   "repository": "https://github.com/badsyntax/react-seed",
   "config": {
     "build_dir": "./build",
+    "dist_dir": "./dist",
     "dev_port": 8000
   },
   "scripts": {
@@ -32,17 +33,18 @@
     "babel-jest": "^4.0.0",
     "babel-loader": "^4.1.0",
     "babel-runtime": "^4.7.8",
-    "css-loader": "^0.9.1",
+    "jest-cli": "^0.4.0",
+    "lodash": "^3.5.0",
     "eslint": "^0.16.2",
+    "css-loader": "^0.9.1",
     "extract-text-webpack-plugin": "^0.3.8",
     "file-loader": "^0.8.1",
     "html-loader": "^0.2.3",
-    "jest-cli": "^0.4.0",
-    "lodash": "^3.5.0",
     "postcss-loader": "^0.3.0",
     "sass-loader": "^0.4.2",
     "style-loader": "^0.8.3",
     "template-html-loader": "0.0.3",
+    "react-hot-loader": "^1.2.2",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
   },
