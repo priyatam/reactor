@@ -7,8 +7,8 @@ var pkg = require('./package.json');
 
 var DEBUG = process.env.NODE_ENV !== 'production';
 
-var cssBundle = path.join('css', util.format('[name].%s.css', pkg.version));
-var jsBundle = path.join('js', util.format('[name].%s.js', pkg.version));
+var cssBundle = path.join('./', util.format('[name].%s.css', pkg.version));
+var jsBundle = path.join('./', util.format('[name].%s.js', pkg.version));
 
 var cssExtractTextPlugin = new ExtractTextPlugin(cssBundle, {
   allChunks: true
