@@ -4,6 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer-core');
 var pkg = require('./package.json');
+var join = require('path').join;
+var webpackPostcssTools = require('webpack-postcss-tools');
 
 var DEBUG = process.env.NODE_ENV !== 'production';
 
@@ -44,7 +46,7 @@ var loaders = [
   },
   {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
+    loader: 'style!css?importLoaders=1!postcss'
   },
   {
     test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
@@ -84,29 +86,43 @@ if (DEBUG) {
   entry.app.push('webpack/hot/only-dev-server');
 }
 
+var cssMap = webpackPostcssTools.makeVarMap('app/styles/typography.css');
+
 var config = {
-  context: path.join(__dirname, 'app'),
-  cache: DEBUG,
-  debug: DEBUG,
-  target: 'web',
-  devtool: DEBUG ? '#inline-source-map' : false,
   entry: entry,
+  context: path.join(__dirname, 'app'),
   output: {
     path: pkg.config.build_dir,
     publicPath: '/',
     filename: jsBundle,
     pathinfo: DEBUG
   },
+  cache: DEBUG,
+  debug: DEBUG,
+  target: 'web',
+  devtool: DEBUG ? '#inline-source-map' : false,
   module: {
     loaders: loaders
   },
-  postcss: [
-    autoprefixer
-  ],
-  plugins: plugins,
   resolve: {
-    extensions: ['', '.js', '.jsx']
-  }
+    extensions: ['', '.js', '.jsx'],
+    packageMains: ['webpack', 'browser', 'web', 'style', 'main' ]
+  },
+  plugins: plugins,
+  postcss: [
+    autoprefixer,
+    webpackPostcssTools.prependTildesToImports,
+
+    require('postcss-custom-properties')({
+      variables: cssMap.vars
+    }),
+
+    require('postcss-custom-media')({
+      extensions: cssMap.media
+    }),
+
+    require('postcss-calc')()
+  ]
 };
 
 module.exports = config;

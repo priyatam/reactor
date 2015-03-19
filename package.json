@@ -23,7 +23,8 @@
     "classnames": "^1.1.4",
     "flux": "^2.0.1",
     "normalize.css": "^3.0.2",
-    "react": "^0.13.0"
+    "react": "^0.13.0",
+    "suitcss": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.1.7",
@@ -32,20 +33,25 @@
     "babel-jest": "^4.0.0",
     "babel-loader": "^4.1.0",
     "babel-runtime": "^4.7.8",
-    "jest-cli": "^0.4.0",
-    "lodash": "^3.5.0",
-    "eslint": "^0.16.2",
     "css-loader": "^0.9.1",
+    "eslint": "^0.16.2",
     "extract-text-webpack-plugin": "^0.3.8",
     "file-loader": "^0.8.1",
     "html-loader": "^0.2.3",
+    "jest-cli": "^0.4.0",
+    "lodash": "^3.5.0",
     "postcss-loader": "^0.3.0",
+    "postcss-calc": "~4.0.0",
+    "postcss-custom-media": "~3.0.0",
+    "postcss-custom-properties": "~3.0.1",
+    "postcss-loader": "~0.3.0",
+    "react-hot-loader": "^1.2.2",
     "sass-loader": "^0.4.2",
     "style-loader": "^0.8.3",
     "template-html-loader": "0.0.3",
-    "react-hot-loader": "^1.2.2",
     "webpack": "^1.7.2",
-    "webpack-dev-server": "^1.7.0"
+    "webpack-dev-server": "^1.7.0",
+    "webpack-postcss-tools": "*.*.*"
   },
   "jest": {
     "scriptPreprocessor": "./jest-preprocessor.js",
